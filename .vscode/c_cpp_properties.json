@@ -3,7 +3,7 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "D:/Git for Windows/github/exercise1/inc"
             ],
             "defines": [
                 "_DEBUG",
