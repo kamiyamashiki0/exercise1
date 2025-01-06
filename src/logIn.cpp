@@ -14,10 +14,16 @@ logIn::logIn()
 
 void logIn::singIn()
 {
-    
+    std::cout << "请输入账号" << std::endl;
+    std::cin >> name;
+    std::ifstream ifs;
+    ifs.open("../test/Users.csv");
+    if (!ifs.is_open())
+    {
+        std::cout << "open file failed" << std::endl;
+    }
 }
 
 void logIn::incorporate()
 {
-
 }
