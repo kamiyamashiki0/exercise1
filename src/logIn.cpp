@@ -17,7 +17,7 @@ void logIn::singIn()
     std::cout << "请输入账号" << std::endl;
     std::cin >> name;
     std::ifstream ifs;
-    ifs.open("../test/Users.csv");
+    ifs.open("../test/Users.csv", std::ios::in); // ios不是命名空间，而是一个模板类
     if (!ifs.is_open())
     {
         std::cout << "open file failed" << std::endl;
@@ -26,4 +26,5 @@ void logIn::singIn()
 
 void logIn::incorporate()
 {
+    // 屁事没干的一天啊啊啊啊
 }
