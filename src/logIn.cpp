@@ -26,37 +26,37 @@ void logIn::singIn()
     }
     std::string s;
     int flag = 0;
-    while(std::getline(ifs,s))//直接读整行，不要按逗号一块一块读了
+    while (std::getline(ifs, s)) // 直接读整行，不要按逗号一块一块读了
     {
-        std::stringstream ss;//设为局部变量，每次循环流都会被清空
-        std::string tmp_name;
+        std::stringstream ss; // 设为局部变量，每次循环流都会被清空
+        std::string tmp_name; // 或者放在外部声明，但记得每次循环结束要清空
         ss << s;
         std::getline(ss, tmp_name, ',');
-        if(name.compare(tmp_name)==0)
+        if (name.compare(tmp_name) == 0)
         {
             flag = 1;
             std::cout << "请输入密码" << std::endl;
             std::string tmp_password;
             char c;
             std::getline(ss, tmp_password, ',');
-            while(1)
+            while (1)
             {
-                while((c=_getch())!='\r')
+                while ((c = _getch()) != '\r')
                 {
                     password += c;
                     std::cout << '*';
                 }
                 std::cout << std::endl;
-                if(password.compare(tmp_password)==0)
+                if (password.compare(tmp_password) == 0)
                 {
                     std::cout << "登录成功" << std::endl;
                     break;
                 }
                 else
                 {
-                    std::cout << "密码错误，请重新输入" << std::endl;//TODO:exit
+                    std::cout << "密码错误，请重新输入" << std::endl; // TODO:exit
                     password.clear();
-                }                              //重新输入时之前的输入要清空
+                } // 重新输入时之前的输入要清空
             }
 
             break;
@@ -66,7 +66,7 @@ void logIn::singIn()
             continue;
         }
     }
-    if(flag==0)
+    if (flag == 0)
     {
         std::cout << "账户不存在，请注册新账户" << std::endl;
     }
@@ -76,56 +76,66 @@ void logIn::singIn()
 void logIn::incorporate()
 {
     std::cout << "请输入账户名" << std::endl;
-    lableIn:
     std::cin >> name;
     std::fstream ifs;
     std::string s;
     ifs.open("../test/Users.csv", std::ios::in);
-    if(!ifs.is_open())
+    if (!ifs.is_open())
     {
         std::cout << "open file failed" << std::endl;
         return;
     }
-    while(std::getline(ifs,s))
+    std::stringstream ss;
+    std::string tmp_name; // 声明放到循环外面好一点
+    while (std::getline(ifs, s))
     {
-        std::stringstream ss;
+        // std::cin >> name;
         ss << s;
-        std::string tmp_name;
         std::getline(ss, tmp_name, ',');
-        if(name.compare(tmp_name)==0)
+        if (name.compare(tmp_name) == 0)
         {
             std::cout << "用户名已存在，请重新输入" << std::endl;
-            ifs.close();
-            goto lableIn;
+            std::cin >> name;
+            ifs.seekg(std::ios::beg); // 回到文件开头
         }
-    }
+        ss.clear(); // 记得清空
+        ss.str(""); // stringstream的clear并不清空缓存，只是重置了流的状态！！！！！！！！
+    } // 遇到重复的名字，文件指针就会回到开头，意味着循环重头开始
     ifs.close();
 
-    lablePassRein:
-    std::cout << "请输入密码" << std::endl;
+
     char c;
-    while((c=_getch())!='\r')
+    std::string passwordCon;
+    while(1)
     {
-        password += c;
-        std::cout << '*';
-    }
-    std::cout << std::endl;
-    std::string passwordCon;             //goto返回后的重定义问题？？？？
-    std::cout << "请确认密码" << std::endl;
-    while((c=_getch())!='\r')
-    {
-        passwordCon += c;
-        std::cout << '*';
-    }
-    std::cout << std::endl;
-    if(passwordCon.compare(password)!=0)
-    {
-        std::cout << "前后密码不一致" << std::endl;
-        goto lablePassRein;
+        std::cout << "请输入密码" << std::endl;
+        while ((c = _getch()) != '\r')
+        {
+            password += c;
+            std::cout << '*';
+        }
+        std::cout << std::endl;
+        // std::string passwordCon;             //goto返回后的重定义问题？？？？
+        std::cout << "请确认密码" << std::endl;
+        while ((c = _getch()) != '\r')
+        {
+            passwordCon += c;
+            std::cout << '*';
+        }
+        std::cout << std::endl;
+        if (passwordCon.compare(password) != 0)
+        {
+            std::cout << "前后密码不一致" << std::endl;//TODO:exit
+            password.clear();
+            passwordCon.clear();//记得清空
+        }
+        else
+            break;
     }
     std::fstream ofs;
-    ofs.open("../test/Users.csv", std::ios::out | std::ios::app); 
+    ofs.open("../test/Users.csv", std::ios::out | std::ios::app);
     ofs << name << ',' << password << ',' << std::endl;
     ofs.close();
     std::cout << "注册成功，请登录" << std::endl;
 }
+// 尽量不要用goto语句
