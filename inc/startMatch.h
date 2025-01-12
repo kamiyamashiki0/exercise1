@@ -10,6 +10,7 @@ public:
 private:
     int id;
     std::string name;
+public:
     float score;
 };
 
@@ -17,9 +18,10 @@ class startMatch
 {
 public:
     void createPlayer();
-    void createScore();
+    void createScore(int);
+    void matchFirst();
 
 private:
-    std::vector<player> player_v;
+    std::vector<player> player_v,match1,match2;
     std::vector<float> score;
 };
