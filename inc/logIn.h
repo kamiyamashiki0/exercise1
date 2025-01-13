@@ -9,7 +9,9 @@ public:
     void singIn();
     void incorporate();
 
-private:
+
     std::string name;
+
+private:
     std::string password;
 };

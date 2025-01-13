@@ -1,8 +1,10 @@
 #include <vector>
 #include "startMatch.h"
+#include "logIn.h"
 #include <random>
 #include <ctime>
 #include <algorithm>
+#include <fstream>
 
 void startMatch::createPlayer()//TODO:一种是系统创建，一种是用户创建
 {
@@ -36,7 +38,7 @@ void startMatch::createScore(int playerNumber)
     }
 }
 
-void startMatch::matchFirst()
+void startMatch::matchFirst(const std::string &userName)
 {
     std::mt19937 rng;
     rng.seed(time(0));
@@ -51,5 +53,16 @@ void startMatch::matchFirst()
     std::sort(match1.begin(), match1.end(),
               [](player p1, player p2)
               { return p1.score > p2.score; });//严格弱序，不能用>=，避免不必要的拷贝提高性能
+
+    std::cout << "第一轮比赛结果如下：" << std::endl;
+    userFile = userName + "Data.csv";
+    std::fstream ofs;
+    ofs.open(userFile, std::ios::out | std::ios::app);//只写一个out则是清空文件操作
+    for(const auto p:match1)
+    {
+        ofs << "id:" << p.id << ",name:" << p.name << ",score:" << p.score << "," << std::endl;
+        std::cout << "id:" << p.id << ",name:" << p.name << ",score:" << p.score << "," << std::endl;
+    }
+    ofs.close();
 }
 
