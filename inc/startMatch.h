@@ -19,10 +19,10 @@ class startMatch
 public:
     void createPlayer();
     void createScore(int);
-    void matchFirst(const std::string &);
+    void matchFirst();
 
 private:
-    std::vector<player> player_v,match1,match2;
+    std::vector<player> player_v,match1_1,match1_2,match2;
     std::vector<float> score;
     std::string userFile;
 };

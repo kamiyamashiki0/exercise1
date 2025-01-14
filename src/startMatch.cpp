@@ -38,7 +38,7 @@ void startMatch::createScore(int playerNumber)
     }
 }
 
-void startMatch::matchFirst(const std::string &userName)
+void startMatch::matchFirst()
 {
     std::mt19937 rng;
     rng.seed(time(0));
@@ -47,22 +47,43 @@ void startMatch::matchFirst(const std::string &userName)
 
     std::vector<player>::iterator it = player_v.begin();
 
-    std::transform(it, it + 6, /*match1.begin()*/std::back_inserter(match1), //back_inserter（插入迭代器）执行的是push_back操作，会动态扩展空间，直接用begin()不会扩展空间，需要预留足够的空间
+    std::transform(it, it + 6, /*match1_1.begin()*/std::back_inserter(match1_1), //back_inserter（插入迭代器）执行的是push_back操作，会动态扩展空间，直接用begin()不会扩展空间，需要预留足够的空间
                    [](player p){ return p; });//只是进行复制的话可以用copy
 
-    std::sort(match1.begin(), match1.end(),
+    std::copy(it + 6, player_v.end(), std::back_inserter(match1_2));
+
+    std::sort(match1_1.begin(), match1_1.end(),
               [](player p1, player p2)
               { return p1.score > p2.score; });//严格弱序，不能用>=，避免不必要的拷贝提高性能
 
-    std::cout << "第一轮比赛结果如下：" << std::endl;
-    userFile = userName + "Data.csv";
-    std::fstream ofs;
-    ofs.open(userFile, std::ios::out | std::ios::app);//只写一个out则是清空文件操作
-    for(const auto p:match1)
+    std::sort(match1_2.begin(), match1_2.end(),
+              [](player p1, player p2)
+              { return p1.score > p2.score; });
+
+    std::copy(match1_1.begin(), match1_1.begin() + 3, std::back_inserter(match2));
+    std::copy(match1_2.begin(), match1_2.begin()+3, std::back_inserter(match2));
+    std::cout << "第一轮第一组比赛结果如下：" << std::endl;
+    for(const auto p:match1_1)
     {
-        ofs << "id:" << p.id << ",name:" << p.name << ",score:" << p.score << "," << std::endl;
         std::cout << "id:" << p.id << ",name:" << p.name << ",score:" << p.score << "," << std::endl;
     }
-    ofs.close();
+
+    std::cout << "第一轮第二组比赛结果如下：" << std::endl;
+    for (const auto p : match1_2)
+    {
+        std::cout << "id:" << p.id << ",name:" << p.name << ",score:" << p.score << "," << std::endl;
+    }
+
+    std::cout << "第二轮比赛结果如下：" << std::endl;
+    for (const auto p : match2)
+    {
+        std::cout << "id:" << p.id << ",name:" << p.name << ",score:" << p.score << "," << std::endl;
+    }
+
+    std::cout << "冠亚季军分别为:" << std::endl;
+    for (int i = 0; i < 3;i++)
+    {
+        std::cout << "id:" << match2[i].id << ",name:" << match2[i].name << ",score:" << match2[i].score << std::endl;
+    }
 }
 
