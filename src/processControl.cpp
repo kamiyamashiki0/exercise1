@@ -5,4 +5,12 @@
 void processControl::exeStart()
 {
     logIn login;
+    while(int i=login.logInMenu())
+    {
+        switch(i)
+        {
+            case(1):
+            
+        }
+    }
 }

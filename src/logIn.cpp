@@ -5,15 +5,19 @@
 #include <conio.h>
 #include <sstream>
 
-logIn::logIn()
+int logIn::logInMenu()
 {
+    int option;
     std::cout << "*******************************" << std::endl;
     std::cout << "*************1.登录************" << std::endl;
     std::cout << "*************2.注册************" << std::endl;
+    std::cout << "*************0.退出************" << std::endl;
     std::cout << "*******************************" << std::endl;
+    std::cin >> option;
+    return option;
 }
 
-void logIn::singIn()
+int logIn::singIn()//返回1，程序运行出错，返回0，程序运行正常
 {
     std::cout << "请输入账号" << std::endl;
     std::cin >> name;
@@ -22,7 +26,7 @@ void logIn::singIn()
     if (!ifs.is_open())
     {
         std::cout << "open file failed" << std::endl;
-        return;
+        return 1;
     }
     std::string s;
     int flag = 0;
@@ -63,14 +67,17 @@ void logIn::singIn()
         }
         else
         {
-            continue;
+            continue;//continue 是直接回到以一个大括号而不是调到最后一个花括号，但是仍会清空局部变量的值，break是直接跳出，不会经过大括号
         }
     }
     if (flag == 0)
     {
         std::cout << "账户不存在，请注册新账户" << std::endl;
+        ifs.close();
+        return 0;//这也属于程序正常运行
     }
     ifs.close();
+    return 0;
 }
 
 void logIn::incorporate()

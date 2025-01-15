@@ -5,8 +5,8 @@
 class logIn
 {
 public:
-    logIn();
-    void singIn();
+    int logInMenu();
+    int singIn();
     void incorporate();
 
 
