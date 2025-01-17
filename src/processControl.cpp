@@ -9,7 +9,7 @@ void processControl::exeStart()
     {
         switch(i)
         {
-            case(1)://今天什么都没干
+            case(1):
 
         }
     }
