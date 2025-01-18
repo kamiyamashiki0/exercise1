@@ -11,6 +11,7 @@ public:
 
 
     std::string name;
+    int status = 1;
 
 private:
     std::string password;

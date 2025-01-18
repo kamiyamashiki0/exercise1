@@ -10,7 +10,13 @@ void processControl::exeStart()
         switch(i)
         {
             case(1):
-
+                while(login.singIn());
+                
         }
     }
+}
+
+void processControl::loginMenu(const player& p)
+{
+    //单例模式
 }
