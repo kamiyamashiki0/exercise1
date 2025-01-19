@@ -4,5 +4,5 @@ class processControl
 {
     public:
         void exeStart();
-        void loginMenu(const player &);
+        void loginMenu(logIn &);
 };

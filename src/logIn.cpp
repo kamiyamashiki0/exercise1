@@ -54,6 +54,7 @@ int logIn::singIn()//返回1，程序运行出错，返回0，程序运行正常
                 if (password.compare(tmp_password) == 0)
                 {
                     std::cout << "登录成功" << std::endl;
+                    status = 0;
                     break;
                 }
                 else
@@ -146,3 +147,8 @@ void logIn::incorporate()
     std::cout << "注册成功，请登录" << std::endl;
 }
 // 尽量不要用goto语句
+
+void logIn::exit()
+{
+    status = 0;
+}

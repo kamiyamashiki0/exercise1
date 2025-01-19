@@ -16,7 +16,18 @@ void processControl::exeStart()
     }
 }
 
-void processControl::loginMenu(const player& p)
+void processControl::loginMenu(logIn& log)
 {
     //单例模式
+    while(log.status)
+    {
+        switch(int i=log.logInMenu())
+        {
+            case(1):
+            while(log.singIn());
+            break;
+            case(2):
+            
+        }
+    }
 }
