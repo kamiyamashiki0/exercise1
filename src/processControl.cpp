@@ -1,33 +1,46 @@
 #include "processControl.h"
 #include "logIn.h"
 #include "startMatch.h"
+#include "User.h"
 
 void processControl::exeStart()
 {
     logIn login;
-    while(int i=login.logInMenu())
+    while (int i = login.logInMenu())
     {
-        switch(i)
+        switch (i)
         {
-            case(1):
-                while(login.singIn());
-                
+        case (1):
+            while (login.singIn())
+                ;
         }
     }
 }
 
-void processControl::loginMenu(logIn& log)
+void processControl::loginMenu(logIn &log)
 {
-    //单例模式
-    while(log.status)
+    // 单例模式
+    while (User::getInstance().menuLogIn)
     {
-        switch(int i=log.logInMenu())
+        switch (int i = log.logInMenu())
         {
-            case(1):
-            while(log.singIn());
+        case (1):
+            while (log.singIn());
             break;
-            case(2):
-            
+        case (2):
+            while (log.incorporate());
+            break;
+        case (0):
+            log.exit();
+            break;
         }
+    }
+}
+
+void processControl::mainMenu()
+{
+    while(User::getInstance().menuMain)
+    {
+        
     }
 }

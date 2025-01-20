@@ -38,7 +38,7 @@ void startMatch::createScore(int playerNumber)
     }
 }
 
-void startMatch::matchFirst()
+void startMatch::match()
 {
     std::mt19937 rng;
     rng.seed(time(0));
@@ -53,11 +53,11 @@ void startMatch::matchFirst()
     std::copy(it + 6, player_v.end(), std::back_inserter(match1_2));
 
     std::sort(match1_1.begin(), match1_1.end(),
-              [](player p1, player p2)
+              [](player &p1, player &p2)
               { return p1.score > p2.score; });//严格弱序，不能用>=，避免不必要的拷贝提高性能
 
     std::sort(match1_2.begin(), match1_2.end(),
-              [](player p1, player p2)
+              [](player &p1, player &p2)
               { return p1.score > p2.score; });
 
     std::copy(match1_1.begin(), match1_1.begin() + 3, std::back_inserter(match2));

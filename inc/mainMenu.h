@@ -4,7 +4,7 @@
 class mainMenu
 {
     public:
-        mainMenu();
+        int playMainMenu();
         void startMatch();
         void viewLog();
         void clearLog();

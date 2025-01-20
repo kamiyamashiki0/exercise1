@@ -19,7 +19,7 @@ class startMatch
 public:
     void createPlayer();
     void createScore(int);
-    void matchFirst();
+    void match();
 
 private:
     std::vector<player> player_v,match1_1,match1_2,match2;

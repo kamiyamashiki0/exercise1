@@ -1,4 +1,5 @@
 #include "logIn.h"
+#include "User.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -54,7 +55,10 @@ int logIn::singIn()//返回1，程序运行出错，返回0，程序运行正常
                 if (password.compare(tmp_password) == 0)
                 {
                     std::cout << "登录成功" << std::endl;
-                    status = 0;
+                    User::getInstance().name = name;
+                    User::getInstance().password = password;
+                    User::getInstance().menuLogIn = false;
+                    User::getInstance().menuMain = true;
                     break;
                 }
                 else
@@ -81,7 +85,7 @@ int logIn::singIn()//返回1，程序运行出错，返回0，程序运行正常
     return 0;
 }
 
-void logIn::incorporate()
+int logIn::incorporate()
 {
     std::cout << "请输入账户名" << std::endl;
     std::cin >> name;
@@ -145,10 +149,11 @@ void logIn::incorporate()
     ofs << name << ',' << password << ',' << std::endl;
     ofs.close();
     std::cout << "注册成功，请登录" << std::endl;
+    return 0;
 }
 // 尽量不要用goto语句
 
 void logIn::exit()
 {
-    status = 0;
+    User::getInstance().status=1;
 }
