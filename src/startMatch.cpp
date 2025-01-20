@@ -5,6 +5,7 @@
 #include <ctime>
 #include <algorithm>
 #include <fstream>
+#include "User.h"
 
 void startMatch::createPlayer()//TODO:一种是系统创建，一种是用户创建
 {
@@ -48,7 +49,7 @@ void startMatch::match()
     std::vector<player>::iterator it = player_v.begin();
 
     std::transform(it, it + 6, /*match1_1.begin()*/std::back_inserter(match1_1), //back_inserter（插入迭代器）执行的是push_back操作，会动态扩展空间，直接用begin()不会扩展空间，需要预留足够的空间
-                   [](player p){ return p; });//只是进行复制的话可以用copy
+                   [](player &p){ return p; });//只是进行复制的话可以用copy
 
     std::copy(it + 6, player_v.end(), std::back_inserter(match1_2));
 
@@ -84,6 +85,27 @@ void startMatch::match()
     for (int i = 0; i < 3;i++)
     {
         std::cout << "id:" << match2[i].id << ",name:" << match2[i].name << ",score:" << match2[i].score << std::endl;
+    }
+
+    std::cout << "*****************************" << std::endl;
+    std::cout << "*******是否保存记录？*********" << std::endl;
+    std::cout << "*******1.是****2.否**********" << std::endl;
+    std::cout << "*****************************" << std::endl;
+
+    int option;
+    std::cin >> option;
+    if(option==1)
+    {
+        std::fstream ofs;
+        std::string filename = User::getInstance().name + "Log.csv";
+        std::string filePath = "../test/" + filename;
+        ofs.open(filePath, std::ios::out | std::ios::app);
+        for (int i = 0; i < 3;i++)
+        {
+            ofs << match2[i].id << ',' << match2[i].name << ',' << match2[i].score << ',';
+        }
+        ofs << std::endl;
+        ofs.close();
     }
 }
 

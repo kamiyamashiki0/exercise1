@@ -2,6 +2,7 @@
 #include "logIn.h"
 #include "startMatch.h"
 #include "User.h"
+#include "mainMenu.h"
 
 void processControl::exeStart()
 {
@@ -37,7 +38,7 @@ void processControl::loginMenu(logIn &log)
     }
 }
 
-void processControl::mainMenu()
+void processControl::mainMenuOption(mainMenu& mainmenu)
 {
     while(User::getInstance().menuMain)
     {

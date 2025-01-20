@@ -15,15 +15,3 @@ public:
 private:
     User() = default;
 };
-
-class people
-{
-public:
-    people() {};
-    
-
-private:
-    int id;
-};
-
-people p;

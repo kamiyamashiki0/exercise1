@@ -1,11 +1,11 @@
 #pragma once
-
+#include "startMatch.h"
 
 class mainMenu
 {
     public:
         int playMainMenu();
-        void startMatch();
+        void start(startMatch &);
         void viewLog();
         void clearLog();
         void logOff();
