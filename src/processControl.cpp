@@ -9,7 +9,7 @@ void processControl::exeStart()
     logIn login;
     mainMenu menu1;
     startMatch match;
-    while(User::getInstance().status)
+    while(!User::getInstance().status)
     {
         loginMenu(login);
         mainMenuOption(menu1, match);

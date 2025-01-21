@@ -95,7 +95,7 @@ int logIn::incorporate()
     if (!ifs.is_open())
     {
         std::cout << "open file failed" << std::endl;
-        return;
+        return 1;
     }
     std::stringstream ss;
     std::string tmp_name; // 声明放到循环外面好一点
