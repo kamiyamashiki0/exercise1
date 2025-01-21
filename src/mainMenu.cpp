@@ -43,6 +43,7 @@ void mainMenu::viewLog()
     {
         std::cout << s << std::endl;
     }
+    ifs.close();
 }
 
 void mainMenu::clearLog()
@@ -55,3 +56,15 @@ void mainMenu::clearLog()
     ofs.close();
 }
 
+void mainMenu::logOff()
+{
+    User::getInstance().status = 1;
+    User::getInstance().menuMain = false;
+    User::getInstance().menuLogIn = false;
+}
+
+void mainMenu::returnBack()
+{
+    User::getInstance().menuLogIn = true;
+    User::getInstance().menuMain = false;
+}

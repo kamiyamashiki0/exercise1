@@ -6,5 +6,5 @@ class processControl
     public:
         void exeStart();
         void loginMenu(logIn &);
-        void mainMenuOption(mainMenu &);
+        void mainMenuOption(mainMenu &,startMatch&);
 };

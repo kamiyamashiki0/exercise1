@@ -1,9 +1,7 @@
-#include <iostream>
-#include "logIn.h"
-
-using namespace std;
-int exit;
+#include "processControl.h"
 int main()
 {
-    logIn l1;
+    processControl p;
+    p.exeStart();
+    return 0;
 }

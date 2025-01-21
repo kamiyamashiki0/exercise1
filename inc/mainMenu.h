@@ -9,4 +9,5 @@ class mainMenu
         void viewLog();
         void clearLog();
         void logOff();
+        void returnBack();
 };

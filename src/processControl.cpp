@@ -7,14 +7,12 @@
 void processControl::exeStart()
 {
     logIn login;
-    while (int i = login.logInMenu())
+    mainMenu menu1;
+    startMatch match;
+    while(User::getInstance().status)
     {
-        switch (i)
-        {
-        case (1):
-            while (login.singIn())
-                ;
-        }
+        loginMenu(login);
+        mainMenuOption(menu1, match);
     }
 }
 
@@ -26,10 +24,12 @@ void processControl::loginMenu(logIn &log)
         switch (int i = log.logInMenu())
         {
         case (1):
-            while (log.singIn());
+            while (log.singIn())
+                ;
             break;
         case (2):
-            while (log.incorporate());
+            while (log.incorporate())
+                ;
             break;
         case (0):
             log.exit();
@@ -38,10 +38,27 @@ void processControl::loginMenu(logIn &log)
     }
 }
 
-void processControl::mainMenuOption(mainMenu& mainmenu)
+void processControl::mainMenuOption(mainMenu &mainmenu, startMatch &start)
 {
-    while(User::getInstance().menuMain)
+    while (User::getInstance().menuMain)
     {
-        
+        switch (int i = mainmenu.playMainMenu())
+        {
+        case (1):
+            mainmenu.start(start);
+            break;
+        case (2):
+            mainmenu.viewLog();
+            break;
+        case (3):
+            mainmenu.clearLog();
+            break;
+        case (4):
+            mainmenu.returnBack();
+            break;
+        case (5):
+            mainmenu.logOff();
+            break;
+        }
     }
 }

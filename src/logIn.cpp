@@ -156,4 +156,6 @@ int logIn::incorporate()
 void logIn::exit()
 {
     User::getInstance().status=1;
+    User::getInstance().menuLogIn = false;
+    User::getInstance().menuMain = false;
 }
