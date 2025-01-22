@@ -53,5 +53,6 @@
         "variant": "cpp",
         "fstream": "cpp",
         "sstream": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "D:/Git for Windows/github/exercise1/src"
 }
