@@ -115,6 +115,163 @@ depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
+#=============================================================================
+# Target rules for targets named exercise1
+
+# Build rule for target.
+exercise1: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 exercise1
+.PHONY : exercise1
+
+# fast build rule for target.
+exercise1/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exercise1.dir\build.make CMakeFiles/exercise1.dir/build
+.PHONY : exercise1/fast
+
+User.obj: User.cpp.obj
+.PHONY : User.obj
+
+# target to build an object file
+User.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exercise1.dir\build.make CMakeFiles/exercise1.dir/User.cpp.obj
+.PHONY : User.cpp.obj
+
+User.i: User.cpp.i
+.PHONY : User.i
+
+# target to preprocess a source file
+User.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exercise1.dir\build.make CMakeFiles/exercise1.dir/User.cpp.i
+.PHONY : User.cpp.i
+
+User.s: User.cpp.s
+.PHONY : User.s
+
+# target to generate assembly for a file
+User.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exercise1.dir\build.make CMakeFiles/exercise1.dir/User.cpp.s
+.PHONY : User.cpp.s
+
+logIn.obj: logIn.cpp.obj
+.PHONY : logIn.obj
+
+# target to build an object file
+logIn.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exercise1.dir\build.make CMakeFiles/exercise1.dir/logIn.cpp.obj
+.PHONY : logIn.cpp.obj
+
+logIn.i: logIn.cpp.i
+.PHONY : logIn.i
+
+# target to preprocess a source file
+logIn.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exercise1.dir\build.make CMakeFiles/exercise1.dir/logIn.cpp.i
+.PHONY : logIn.cpp.i
+
+logIn.s: logIn.cpp.s
+.PHONY : logIn.s
+
+# target to generate assembly for a file
+logIn.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exercise1.dir\build.make CMakeFiles/exercise1.dir/logIn.cpp.s
+.PHONY : logIn.cpp.s
+
+main.obj: main.cpp.obj
+.PHONY : main.obj
+
+# target to build an object file
+main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exercise1.dir\build.make CMakeFiles/exercise1.dir/main.cpp.obj
+.PHONY : main.cpp.obj
+
+main.i: main.cpp.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exercise1.dir\build.make CMakeFiles/exercise1.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exercise1.dir\build.make CMakeFiles/exercise1.dir/main.cpp.s
+.PHONY : main.cpp.s
+
+mainMenu.obj: mainMenu.cpp.obj
+.PHONY : mainMenu.obj
+
+# target to build an object file
+mainMenu.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exercise1.dir\build.make CMakeFiles/exercise1.dir/mainMenu.cpp.obj
+.PHONY : mainMenu.cpp.obj
+
+mainMenu.i: mainMenu.cpp.i
+.PHONY : mainMenu.i
+
+# target to preprocess a source file
+mainMenu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exercise1.dir\build.make CMakeFiles/exercise1.dir/mainMenu.cpp.i
+.PHONY : mainMenu.cpp.i
+
+mainMenu.s: mainMenu.cpp.s
+.PHONY : mainMenu.s
+
+# target to generate assembly for a file
+mainMenu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exercise1.dir\build.make CMakeFiles/exercise1.dir/mainMenu.cpp.s
+.PHONY : mainMenu.cpp.s
+
+processControl.obj: processControl.cpp.obj
+.PHONY : processControl.obj
+
+# target to build an object file
+processControl.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exercise1.dir\build.make CMakeFiles/exercise1.dir/processControl.cpp.obj
+.PHONY : processControl.cpp.obj
+
+processControl.i: processControl.cpp.i
+.PHONY : processControl.i
+
+# target to preprocess a source file
+processControl.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exercise1.dir\build.make CMakeFiles/exercise1.dir/processControl.cpp.i
+.PHONY : processControl.cpp.i
+
+processControl.s: processControl.cpp.s
+.PHONY : processControl.s
+
+# target to generate assembly for a file
+processControl.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exercise1.dir\build.make CMakeFiles/exercise1.dir/processControl.cpp.s
+.PHONY : processControl.cpp.s
+
+startMatch.obj: startMatch.cpp.obj
+.PHONY : startMatch.obj
+
+# target to build an object file
+startMatch.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exercise1.dir\build.make CMakeFiles/exercise1.dir/startMatch.cpp.obj
+.PHONY : startMatch.cpp.obj
+
+startMatch.i: startMatch.cpp.i
+.PHONY : startMatch.i
+
+# target to preprocess a source file
+startMatch.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exercise1.dir\build.make CMakeFiles/exercise1.dir/startMatch.cpp.i
+.PHONY : startMatch.cpp.i
+
+startMatch.s: startMatch.cpp.s
+.PHONY : startMatch.s
+
+# target to generate assembly for a file
+startMatch.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exercise1.dir\build.make CMakeFiles/exercise1.dir/startMatch.cpp.s
+.PHONY : startMatch.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -123,6 +280,25 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... exercise1
+	@echo ... User.obj
+	@echo ... User.i
+	@echo ... User.s
+	@echo ... logIn.obj
+	@echo ... logIn.i
+	@echo ... logIn.s
+	@echo ... main.obj
+	@echo ... main.i
+	@echo ... main.s
+	@echo ... mainMenu.obj
+	@echo ... mainMenu.i
+	@echo ... mainMenu.s
+	@echo ... processControl.obj
+	@echo ... processControl.i
+	@echo ... processControl.s
+	@echo ... startMatch.obj
+	@echo ... startMatch.i
+	@echo ... startMatch.s
 .PHONY : help
 
 

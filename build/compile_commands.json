@@ -1,0 +1,32 @@
+[
+{
+  "directory": "D:/Git for Windows/github/exercise1/build",
+  "command": "D:\\VScode\\mingw64\\bin\\g++.exe  @CMakeFiles/exercise1.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\exercise1.dir\\User.cpp.obj -c \"D:\\Git for Windows\\github\\exercise1\\src\\User.cpp\"",
+  "file": "D:/Git for Windows/github/exercise1/src/User.cpp"
+},
+{
+  "directory": "D:/Git for Windows/github/exercise1/build",
+  "command": "D:\\VScode\\mingw64\\bin\\g++.exe  @CMakeFiles/exercise1.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\exercise1.dir\\logIn.cpp.obj -c \"D:\\Git for Windows\\github\\exercise1\\src\\logIn.cpp\"",
+  "file": "D:/Git for Windows/github/exercise1/src/logIn.cpp"
+},
+{
+  "directory": "D:/Git for Windows/github/exercise1/build",
+  "command": "D:\\VScode\\mingw64\\bin\\g++.exe  @CMakeFiles/exercise1.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\exercise1.dir\\main.cpp.obj -c \"D:\\Git for Windows\\github\\exercise1\\src\\main.cpp\"",
+  "file": "D:/Git for Windows/github/exercise1/src/main.cpp"
+},
+{
+  "directory": "D:/Git for Windows/github/exercise1/build",
+  "command": "D:\\VScode\\mingw64\\bin\\g++.exe  @CMakeFiles/exercise1.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\exercise1.dir\\mainMenu.cpp.obj -c \"D:\\Git for Windows\\github\\exercise1\\src\\mainMenu.cpp\"",
+  "file": "D:/Git for Windows/github/exercise1/src/mainMenu.cpp"
+},
+{
+  "directory": "D:/Git for Windows/github/exercise1/build",
+  "command": "D:\\VScode\\mingw64\\bin\\g++.exe  @CMakeFiles/exercise1.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\exercise1.dir\\processControl.cpp.obj -c \"D:\\Git for Windows\\github\\exercise1\\src\\processControl.cpp\"",
+  "file": "D:/Git for Windows/github/exercise1/src/processControl.cpp"
+},
+{
+  "directory": "D:/Git for Windows/github/exercise1/build",
+  "command": "D:\\VScode\\mingw64\\bin\\g++.exe  @CMakeFiles/exercise1.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\exercise1.dir\\startMatch.cpp.obj -c \"D:\\Git for Windows\\github\\exercise1\\src\\startMatch.cpp\"",
+  "file": "D:/Git for Windows/github/exercise1/src/startMatch.cpp"
+}
+]
